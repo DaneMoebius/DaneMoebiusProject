@@ -1,0 +1,9 @@
+package mainpackage;
+
+public class SpeckCipher {
+	String word;
+	public SpeckCipher(String word)
+	{
+		
+	}
+}
