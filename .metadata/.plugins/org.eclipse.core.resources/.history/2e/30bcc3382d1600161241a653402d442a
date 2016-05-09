@@ -7,8 +7,7 @@ public class SpeckCipher {
 	
 	public SpeckCipher()
 	{
-		Scanner keyboard= new Scanner
-				("C:\\Users\\moebiusd5099\\Desktop\\DaneMoebiusProject\\DaneEclipseProject\\src\\mainpackage\\fileRead.txt");
+		Scanner keyboard= new Scanner("C:\\Users\moebiusd5099\Desktop\DaneMoebiusProject\DaneEclipseProject\src\mainpackage\fileRead.txt");
 		word=keyboard.nextLine();
 	}
 	public byte encrypt(String input)
