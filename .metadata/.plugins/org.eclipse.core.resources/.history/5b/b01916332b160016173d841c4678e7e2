@@ -1,14 +1,11 @@
 package mainpackage;
 
-import java.util.Scanner;
-
 public class SpeckCipher {
 	public String word;
 	
 	public SpeckCipher(String input)
 	{
-		Scanner keyboard= new Scanner("fileRead.txt");
-		word=keyboard.next();
+		word=input;
 	}
 	public byte encrypt(String input)
 	{
@@ -16,6 +13,6 @@ public class SpeckCipher {
 	}
 	public String decrypt(byte input)
 	{
-		return word;
+		return "";
 	}
 }

@@ -16,6 +16,6 @@ public class SpeckCipher {
 	}
 	public String decrypt(byte input)
 	{
-		return word;
+		return "";
 	}
 }
