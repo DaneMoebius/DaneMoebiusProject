@@ -6,7 +6,7 @@ public class CipherRunner {
 		// TODO Auto-generated method stub
 		SpeckCipher speck= new SpeckCipher();
 		System.out.println(speck.toString());
-		
+		speck.encrypt("shoe");
 	}
 
 }

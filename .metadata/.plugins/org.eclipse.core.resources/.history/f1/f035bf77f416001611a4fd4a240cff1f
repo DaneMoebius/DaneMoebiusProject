@@ -28,7 +28,7 @@ public class SpeckCipher implements encryptable{
 	{
 		return null;
 	}
-	public String decrypt(byte[] input)
+	public String decrypt(byte input)
 	{
 		return "";
 	}

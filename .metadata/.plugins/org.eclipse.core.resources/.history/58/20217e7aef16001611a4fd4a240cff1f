@@ -4,13 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import javax.crypto.KeyGenerator;
-
-public class SpeckCipher implements encryptable{
-	private String word;
-	private byte[] bytegroup;
-	private byte[] bytekey;
-	private KeyGenerator gen;
+public class SpeckCipher {
+	public String word;
+	
 	public SpeckCipher()
 	{
 		Scanner keyboard;
@@ -23,12 +19,11 @@ public class SpeckCipher implements encryptable{
 		}
 		
 	}
-	
-	public byte[] encrypt(String input)
+	public byte encrypt(String input)
 	{
-		return null;
+		return 44;
 	}
-	public String decrypt(byte[] input)
+	public String decrypt(byte input)
 	{
 		return "";
 	}
@@ -36,5 +31,4 @@ public class SpeckCipher implements encryptable{
 	{
 		return word;
 	}
-	
 }

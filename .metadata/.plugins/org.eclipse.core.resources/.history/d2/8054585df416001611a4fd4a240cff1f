@@ -23,12 +23,11 @@ public class SpeckCipher implements encryptable{
 		}
 		
 	}
-	
 	public byte[] encrypt(String input)
 	{
 		return null;
 	}
-	public String decrypt(byte[] input)
+	public String decrypt(byte input)
 	{
 		return "";
 	}
@@ -36,5 +35,4 @@ public class SpeckCipher implements encryptable{
 	{
 		return word;
 	}
-	
 }

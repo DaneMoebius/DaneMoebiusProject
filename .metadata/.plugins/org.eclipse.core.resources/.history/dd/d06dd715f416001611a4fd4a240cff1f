@@ -1,0 +1,6 @@
+package mainpackage;
+
+public interface encryptable {
+	public byte[] encrypt();
+	public String decrypt();
+}

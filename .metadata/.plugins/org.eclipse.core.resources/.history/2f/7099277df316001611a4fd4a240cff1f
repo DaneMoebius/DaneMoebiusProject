@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import javax.crypto.KeyGenerator;
 
-public class SpeckCipher implements encryptable{
+public class SpeckCipher {
 	private String word;
 	private byte[] bytegroup;
 	private byte[] bytekey;
@@ -23,12 +23,13 @@ public class SpeckCipher implements encryptable{
 		}
 		
 	}
-	
 	public byte[] encrypt(String input)
 	{
+		gen.generateKey();
+		System.out.println(gen);
 		return null;
 	}
-	public String decrypt(byte[] input)
+	public String decrypt(byte input)
 	{
 		return "";
 	}
@@ -36,5 +37,4 @@ public class SpeckCipher implements encryptable{
 	{
 		return word;
 	}
-	
 }

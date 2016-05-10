@@ -23,15 +23,16 @@ public class SpeckCipher implements encryptable{
 		}
 		
 	}
-	
-	public byte[] encrypt(String input)
-	{
+	public byte[] encrypt() {
+		// TODO Auto-generated method stub
 		return null;
 	}
-	public String decrypt(byte[] input)
-	{
-		return "";
+	
+	public String decrypt() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+	
 	public String toString()
 	{
 		return word;
