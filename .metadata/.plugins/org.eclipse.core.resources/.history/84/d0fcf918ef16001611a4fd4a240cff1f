@@ -11,8 +11,8 @@ public class SpeckCipher {
 	{
 		Scanner keyboard;
 		try {
-			keyboard = new Scanner(new File("src\\mainpackage\\fileRead.txt"));
-			word=keyboard.nextLine();
+			keyboard = new Scanner(new File("Desktop\\DaneMoebiusProject\\DaneEclipseProject\\src\\mainpackage\\fileRead.txt"));
+			word=keyboard.next();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
