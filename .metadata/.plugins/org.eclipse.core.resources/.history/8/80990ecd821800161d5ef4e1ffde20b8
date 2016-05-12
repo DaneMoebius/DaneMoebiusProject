@@ -1,0 +1,73 @@
+package mainpackage;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+import javax.crypto.KeyGenerator;
+
+public class SpeckCipher implements encryptable{
+	private byte[] bytes;
+	private int wordcount;
+	private int rounds;
+	private byte[] key;
+	int alpha = 8; 
+	int beta = 3; 
+	int x,y;
+	int[] l = new int[2*rounds], k = new int[rounds];
+	public SpeckCipher()
+	{
+		Scanner keyboard;
+		
+		try {
+			keyboard = new Scanner(new File("src\\mainpackage\\fileRead.txt"));
+			
+			
+			/*for (int i = 0; i < nums.length; i++) 
+	            {
+	                nums[i] = keyboard.nextByte();
+	                keyboard.nextLine();
+	                i++;
+	            }
+		*/
+			
+		}catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Cannot Find File!");
+		}
+		bytes=new byte[] {0x12,0x75};
+		wordcount=bytes.length;
+	}
+	
+	public static int rotateLeft(int number, int amount) {
+		   return number << amount | number >>> (32-amount);
+		}
+	
+	public static int rotateRight(int number, int amount) {
+		   return number >>> amount | number << (32-amount);
+		}
+		
+	public byte[] encrypt()
+	{
+		for(int i = 0; i < rounds-1; i++) {
+		    l[i+wordcount-1] = (k[i] + rotateRight(l[i], alpha)) ^ i;
+		    k[i+1] = rotateLeft(k[i], beta) ^ l[i+wordcount-1]; 
+		}
+		for(int i = 0; i < rounds; i++) {
+		    x = (rotateLeft(x, alpha) + y) ^ k[i];
+		    y = rotateRight(y, beta) ^ x;
+		}
+		return y;
+	}
+	public String decrypt(byte[] input)
+	{
+		return "";
+	}
+	public String toString()
+	{
+		return Arrays.toString(bytes);
+	}
+	
+}

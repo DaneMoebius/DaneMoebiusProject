@@ -1,0 +1,54 @@
+package mainpackage;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+import javax.crypto.KeyGenerator;
+
+public class SpeckCipher implements encryptable{
+	private byte[] nums;
+	private int wordcount;
+	private int rounds;
+	public SpeckCipher()
+	{
+		Scanner keyboard;
+		
+		try {
+			keyboard = new Scanner(new File("src\\mainpackage\\fileRead.txt"));
+			nums=new byte[4];
+			
+			for (int i = 0; i < nums.length; i++) 
+				
+			
+	            {
+	                nums[i] = keyboard.nextByte();
+	                keyboard.nextLine();
+	                i++;
+	            }
+		
+			wordcount=nums.length;
+		}catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Cannot Find File!");
+		}
+		
+	}
+	
+	public byte[] encrypt(String input)
+	{
+		
+		return null;
+	}
+	public String decrypt(byte[] input)
+	{
+		return "";
+	}
+	public String toString()
+	{
+		return Arrays.toString(nums);
+	}
+	
+}

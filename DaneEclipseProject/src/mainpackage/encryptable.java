@@ -1,7 +1,7 @@
 package mainpackage;
 
 public interface encryptable {
-	public byte[] encrypt(String input);
+	public String encrypt();
 	
-	public String decrypt(byte[] input);
+	public String decrypt();
 }
