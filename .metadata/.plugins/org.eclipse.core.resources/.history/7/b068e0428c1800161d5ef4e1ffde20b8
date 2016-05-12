@@ -28,7 +28,9 @@ public class SpeckCipher implements encryptable{
 			
 			for (int i = 0; i < 8; i++) 
 	            {
-	                plainText[i] = keyboard.nextInt();
+	                plainText[i] = keyboard.nextByte();
+	                keyboard.nextInt();
+	               
 	            }
 	
 			

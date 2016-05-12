@@ -20,17 +20,18 @@ public class SpeckCipher implements encryptable{
 	public SpeckCipher()
 	{
 		Scanner keyboard;
-		//plainText=new int[] {1,2,3,4,5,6,7,8};
-		plainText= new int[8];
+		
 		try {
 			keyboard = new Scanner(new File("src\\mainpackage\\fileRead.txt"));
 			
 			
-			for (int i = 0; i < 8; i++) 
+			/*for (int i = 0; i < nums.length; i++) 
 	            {
-	                plainText[i] = keyboard.nextInt();
+	                nums[i] = keyboard.nextByte();
+	                keyboard.nextLine();
+	                i++;
 	            }
-	
+		*/
 			
 		}catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -38,7 +39,7 @@ public class SpeckCipher implements encryptable{
 			System.out.println("Cannot Find File!");
 		}
 		
-		
+		plainText=new int[] {20,10,30,40,50,60,07,80};
 		
 		 x = boxing(plainText, 0, 1);
 		    y = boxing(plainText, 1, 2);
