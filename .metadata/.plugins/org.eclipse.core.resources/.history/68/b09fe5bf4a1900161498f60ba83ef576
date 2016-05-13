@@ -12,7 +12,7 @@ import javax.crypto.KeyGenerator;
 
 public class SpeckCipher implements encryptable{
 	private int[] plainText;
-	private int wordcount=8;
+	private int wordcount=4;
 	private int rounds=27;
 	private byte[] key;
 	int alpha = 8; 
@@ -95,10 +95,11 @@ public static int boxing(int[] arr, int i, int j) {
 	{
 	try {
 
-		String content = encrypt()+ " \n "+ decrypt();
+		String content = "This is the content to write into file";
 
 		File file = new File("src\\mainpackage\\output.txt");
 
+		// if file doesnt exists, then create it
 		if (!file.exists()) {
 			file.createNewFile();
 		}
@@ -108,11 +109,10 @@ public static int boxing(int[] arr, int i, int j) {
 		bw.write(content);
 		bw.close();
 
-		System.out.println("Done Writing File!");
+		System.out.println("Done");
 
 	} catch (IOException e) {
 		e.printStackTrace();
-		System.out.println("Error Writing File!");
 	}
 	}
 	public String toString()

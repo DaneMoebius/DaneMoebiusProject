@@ -1,10 +1,7 @@
 package mainpackage;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -12,7 +9,7 @@ import javax.crypto.KeyGenerator;
 
 public class SpeckCipher implements encryptable{
 	private int[] plainText;
-	private int wordcount=8;
+	private int wordcount=4;
 	private int rounds=27;
 	private byte[] key;
 	int alpha = 8; 
@@ -90,30 +87,6 @@ public static int boxing(int[] arr, int i, int j) {
 	        x = rotateLeft((x ^ k[i]) - y, alpha);
 	    }
 		return "Decrypt: " + x +" "+y;
-	}
-	public void write()
-	{
-	try {
-
-		String content = encrypt()+ " \n "+ decrypt();
-
-		File file = new File("src\\mainpackage\\output.txt");
-
-		if (!file.exists()) {
-			file.createNewFile();
-		}
-
-		FileWriter fw = new FileWriter(file.getAbsoluteFile());
-		BufferedWriter bw = new BufferedWriter(fw);
-		bw.write(content);
-		bw.close();
-
-		System.out.println("Done Writing File!");
-
-	} catch (IOException e) {
-		e.printStackTrace();
-		System.out.println("Error Writing File!");
-	}
 	}
 	public String toString()
 	{

@@ -12,7 +12,7 @@ import javax.crypto.KeyGenerator;
 
 public class SpeckCipher implements encryptable{
 	private int[] plainText;
-	private int wordcount=8;
+	private int wordcount=4;
 	private int rounds=27;
 	private byte[] key;
 	int alpha = 8; 
