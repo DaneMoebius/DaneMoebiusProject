@@ -14,6 +14,7 @@ public class SpeckCipher implements encryptable{
 	private int[] plainText;
 	private int wordcount=4;
 	private int rounds=27;
+	private byte[] key;
 	int alpha = 8; 
 	int beta = 3; 
 	int x;
@@ -49,7 +50,7 @@ public class SpeckCipher implements encryptable{
    
 public void keyextension()
 {
-	for(int i = 0; i < rounds-1; i++) {
+	for(int i = 0; i < 1; i++) {
 	    l[i+wordcount-1] = (k[i] + rotateRight(l[i], alpha)) ^ i;
 	    k[i+1] = rotateLeft(k[i], beta) ^ l[i+wordcount-1];
 	}
@@ -60,7 +61,7 @@ public static int boxing(int[] arr, int i, int j) {
         temp[i] = temp[i] << 8 | arr[i*4+1] & 0xff;
         temp[i] = temp[i] << 8 | arr[i*4+2] & 0xff;
         temp[i] = temp[i] << 8 | arr[i*4+3] & 0xff;
-    return temp[i];
+        return temp[i];
 }
 	public static int rotateLeft(int number, int amount) {
 		   return number << amount | number >>> (32-amount);

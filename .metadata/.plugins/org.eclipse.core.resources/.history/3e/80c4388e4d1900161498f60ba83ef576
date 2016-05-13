@@ -12,12 +12,12 @@ import javax.crypto.KeyGenerator;
 
 public class SpeckCipher implements encryptable{
 	private int[] plainText;
-	private int wordcount=4;
+	private int wordcount=8;
 	private int rounds=27;
-	int alpha = 8; 
-	int beta = 3; 
-	int x;
-	int y;
+	private byte[] key;
+	int alpha = 7; 
+	int beta = 2; 
+	int x,y;
 	int[] l = new int[rounds*2];
 	int[] k = new int[rounds];
 	public SpeckCipher()
@@ -55,11 +55,13 @@ public void keyextension()
 	}
 }
 public static int boxing(int[] arr, int i, int j) {
-    	int temp[] = new int[j];
+    int temp[] = new int[j];
         temp[i] |= arr[i*4] & 0xff;
         temp[i] = temp[i] << 8 | arr[i*4+1] & 0xff;
         temp[i] = temp[i] << 8 | arr[i*4+2] & 0xff;
         temp[i] = temp[i] << 8 | arr[i*4+3] & 0xff;
+
+
     return temp[i];
 }
 	public static int rotateLeft(int number, int amount) {
